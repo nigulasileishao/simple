@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="tk.mybatis.simple.mapper.SysUserMapper">
+	<resultMap id="BaseResultMap" type="tk.mybatis.simple.model.SysUser">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="user_name" property="userName" jdbcType="VARCHAR" />
+		<result column="user_password" property="userPassword"
+			jdbcType="VARCHAR" />
+		<result column="user_email" property="userEmail" jdbcType="VARCHAR" />
+		<result column="user_info" property="userInfo" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="selectById" resultMap="BaseResultMap">
+		select * from sys_user where
+		id = #{id}
+	</select>
+	<select id="selectAll" resultMap="BaseResultMap">
+		select * from sys_user
+	</select>
+</mapper>
